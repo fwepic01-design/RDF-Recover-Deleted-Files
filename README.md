@@ -5,6 +5,10 @@ This application is designed to recover deleted files from storage devices.
 ## Overview
 RDF (RecoverDeletedFiles) is a file recovery tool that helps users restore files that have been accidentally deleted from their storage devices. The application works by scanning storage devices at the raw sector level to identify file signatures and recover deleted files based on their file headers. (the current running version is 1.0a)
 
+## Work in Progress
+- [WIP Check for app changes in progress](./blob/main/WIP-Chceck%20for%20app%20changes%20in%20p...)
+
+
 ## How It Works
 
 ### Core Components
