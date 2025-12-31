@@ -2,18 +2,13 @@
 
 This document tracks the current status of features and tasks for the RecoverDeletedFiles (RDF) application. It helps visualize what's being worked on, what's completed, and what hasn't been started yet.
 
-###Feature Development Status
-
-## Legend
-- ✅ **Done**: Feature is completed and implemented
-- 🔄 **In Progress**: Currently being worked on
-- 📋 **Not Started**: Planned feature, not yet implemented
+## Feature Development Status
 
 | Feature | Status | Priority | Notes |
 |--------|--------|----------|-------|
 | Basic UI Framework | ✅ Done | High | Core UI elements implemented |
 | Drive Detection | ✅ Done | High | Detects removable drives |
-| Raw Sector Scanning | ✅ Done | High | Basic implementation |
+| Raw Sector Scanning | 🔄 In Progress | High | Advanced implementation with filesystem-specific recovery (NTFS/FAT), hybrid approach (metadata-first + signature carving), supports drives up to 128GB, requires admin rights for raw access |
 | File Signature Recognition | ✅ Done | High | Supports common file types |
 | File Recovery | ✅ Done | High | Basic recovery functionality |
 | File Preview | 🔄 In Progress | Medium | Basic info display only |
@@ -34,6 +29,10 @@ This document tracks the current status of features and tasks for the RecoverDel
 | Batch Recovery | 📋 Not Started | Medium | Recover multiple files at once |
 | File Recovery Validation | 📋 Not Started | High | Validate recovered files are intact |
 
+## Legend
+- ✅ **Done**: Feature is completed and implemented
+- 🔄 **In Progress**: Currently being worked on
+- 📋 **Not Started**: Planned feature, not yet implemented
 
 ## Priority Levels
 - **High**: Critical functionality needed for core operation
@@ -51,3 +50,8 @@ This document tracks the current status of features and tasks for the RecoverDel
 - Implement accurate file size detection
 - Develop enhanced UI with advanced controls
 - Add development console for debugging
+
+## Known Issues Fixed
+- USB drive access issue: Fixed raw drive access using \.\ format and added fallback methods for when admin rights are not available
+- Improved scanning: Enhanced scanning algorithm with larger buffers (64KB), support for drives up to 128GB, and expanded file signature detection
+- Advanced recovery: Implemented hybrid recovery approach combining filesystem-specific methods (NTFS/FAT) with signature-based carving for better file detection
